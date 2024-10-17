@@ -1,0 +1,24 @@
+function analisarPessoas(pessoas) {
+  // Contar ocorrências das idades
+  const ocorrenciasIdades = pessoas.reduce((ocorrencias, pessoa) => {
+    ocorrencias[pessoa.idade] = (ocorrencias[pessoa.idade] || 0) + 1;
+    return ocorrencias;
+  }, {});
+
+  // Ordenar por idade
+  pessoas.sort((pessoaA, pessoaB) => pessoaA.idade - pessoaB.idade);
+
+  return {
+    ocorrenciasIdades,
+    pessoasOrdenadas: pessoas
+  };
+}
+const pessoas = [
+  { nome: 'Calebe', idade: 30 },
+  { nome: 'Dilsom', idade: 25 },
+  { nome: "Pedro", idade: 35 },
+  { nome: 'Davi', idade: 25 },
+];
+
+const resultado = analisarPessoas(pessoas);
+console.log(resultado);
