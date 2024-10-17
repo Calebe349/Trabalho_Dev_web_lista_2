@@ -1,0 +1,9 @@
+function contarOcorrencias(array) {
+  return array.reduce((ocorrencias, numero) => {
+    ocorrencias[numero] = (ocorrencias[numero] || 0) + 1;
+    return ocorrencias;
+  }, {});
+}
+const numeros = [1, 2, 2, 3, 3, 4, 4, 4, 4];
+const resultado = contarOcorrencias(numeros);
+console.log(resultado); // Saída: { '1': 1, '2': 2, '3': 2, '4': 4 }
