@@ -1,0 +1,17 @@
+function ehPalindromo(palavra) {
+  // Remover espaços e transformar em letras minúsculas para facilitar a comparação
+  const palavraLimpa = palavra.replace(/\s/g, '').toLowerCase();
+
+  // Inverter a palavra
+  const palavraInvertida = palavraLimpa.split('').reverse().join('');
+
+  // Comparar a palavra original com a invertida
+  return palavraLimpa === palavraInvertida;
+}
+const palavra1 = "arara";
+const palavra2 = "radar";
+const frase = "A base do teto desaba";
+
+console.log(ehPalindromo(palavra1));  
+console.log(ehPalindromo(palavra2));  
+console.log(ehPalindromo(frase));
